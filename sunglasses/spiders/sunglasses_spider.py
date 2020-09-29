@@ -46,7 +46,10 @@ class SunglassesSpider(Spider):
         item['size'] = attributes.xpath('./div[@class="attribute global static size"]/span/text()').extract_first()
         item['gender'] = attributes.xpath('./div[@class="attribute global static gender"]/span/text()').extract_first()
         item['sold_out'] = response.xpath('//*[@id="attribute-selector"]/div[4]/a/text()').extract_first() != 'Add to cart'
-        item['polarized'] = 'non-polarized' not in [feature.lower() for feature in features]
+        if 'non-polarized' not in [feature.lower() for feature in features]:
+            item['polarized'] = 'polarized' in [feature.lower() for feature in features]
+        else:
+            item['polarized'] = False
         yield item
 
 
