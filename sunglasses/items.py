@@ -7,6 +7,15 @@ import scrapy
 
 
 class SunglassesItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    price = scrapy.Field()
+    list_price = scrapy.Field()
+    pct_off_list = scrapy.Field()
+    stars = scrapy.Field()
+    review = scrapy.Field()
+    condition = scrapy.Field()
+    color = scrapy.Field()
+    size = scrapy.Field()
+    gender = scrapy.Field()
+    sold_out = scrapy.Field()
+    polarized = scrapy.Field()
