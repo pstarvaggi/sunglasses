@@ -19,3 +19,4 @@ class SunglassesItem(scrapy.Item):
     gender = scrapy.Field()
     sold_out = scrapy.Field()
     polarized = scrapy.Field()
+    url = scrapy.Field()

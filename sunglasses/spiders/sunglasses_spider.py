@@ -50,6 +50,7 @@ class SunglassesSpider(Spider):
             item['polarized'] = 'polarized' in [feature.lower() for feature in features]
         else:
             item['polarized'] = False
+        item['url'] = response.__str__().split()[1][:-1]
         yield item
 
 
